@@ -1,0 +1,21 @@
+COMANDOS BÁSICOS PARA USAR O REPOSITÓRIO DO GITHUB (NECESSÁRIO GIT INSTALADO NO COMPUTADOR):
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+git clone 'link do repositório': Serve para puxar as informações pela primeira vez do GitHub para o computador;
+
+git pull origin main: Quando alguém faz uma edição no repositório, para você poder ter os arquivos atualizados, você dá esse comando, ele deve ser usado toda vez que alguém faz uma edição no código ou no projeto;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+COMO ENVIAR ARQUIVO PARA O GITHUB (EXECUTAR OS COMANDOS SEM ASPAS):
+
+
+1º comando: "git add .": Esse você faz para adicionar todos os arquivos editados, criados, etc para o GitHub;
+
+2º comando: "git commit -m "mensagem": Esse é para escrever dentro das aspas o que você mudou. Ex:
+git commit -m "Alteração da tela de login";
+
+3º comando: "git push origin main": Ele envia tudo para o GitHub, para que todos consigam ver e puxar as alterações.
+
+--------------------------------------------------------------------------------------------------------------------------------------
