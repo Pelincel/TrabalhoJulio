@@ -23,17 +23,23 @@
     <div class="login-form">
         <h3 class="text-center mb-4">Cadastro</h3>
         <form action="${pageContext.request.contextPath}/CadastroServlet" method="post">
-             <div class="form-group">
-        <label for="email">E-mail</label>
-        <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu e-mail" required>
-    </div>
-    <div class="form-group">
-        <label for="password">Senha</label>
-        <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha" required>
-    </div>
-    <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
-    </div>
+            <div class="form-group">
+                <label for="nome_usuario">Nome de Usuário</label>
+                <input type="text" class="form-control" name="nome_usuario" id="nome_usuario" placeholder="Digite seu nome de usuário" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu e-mail" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha" required>
+            </div>
+            <!-- Campo oculto para o tipo de usuário -->
+            <input type="hidden" name="tipo_usuario" value="professor">
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
+            </div>
         </form>
     </div>
 </div>
