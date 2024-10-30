@@ -104,3 +104,13 @@ CREATE TABLE aluno_disciplinas (
     FOREIGN KEY (disciplina_id) REFERENCES disciplinas(disciplina_id) ON DELETE CASCADE,
     FOREIGN KEY (turma_id) REFERENCES turmas(turma_id) ON DELETE CASCADE
 );
+
+--12. Tabela de Usuários
+CREATE TABLE usuarios (
+    usuario_id SERIAL PRIMARY KEY,
+    nome_usuario VARCHAR(50) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    tipo_usuario VARCHAR(20) CHECK (tipo_usuario IN ('administrador', 'professor', 'aluno')) NOT NULL
+);
