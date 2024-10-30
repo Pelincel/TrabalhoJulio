@@ -114,6 +114,22 @@ CREATE TABLE aluno_disciplinas (
     FOREIGN KEY (turma_id) REFERENCES turmas(turma_id) ON DELETE CASCADE
 );
 
+-- Criando a tabela de Especializações
+CREATE TABLE especializacoes (
+    especializacao_id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) UNIQUE NOT NULL
+);
+
+ALTER TABLE professores
+DROP COLUMN area_especializacao;
+
+CREATE TABLE professor_especializacoes (
+    professor_id INT NOT NULL,
+    especializacao_id INT NOT NULL,
+    PRIMARY KEY (professor_id, especializacao_id),
+    FOREIGN KEY (professor_id) REFERENCES professores(professor_id) ON DELETE CASCADE,
+    FOREIGN KEY (especializacao_id) REFERENCES especializacoes(especializacao_id) ON DELETE CASCADE
+);
 -- 13. Tabela de Usuários
 CREATE TABLE usuarios (
     usuario_id SERIAL PRIMARY KEY,
