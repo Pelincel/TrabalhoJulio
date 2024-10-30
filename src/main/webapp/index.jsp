@@ -36,7 +36,7 @@
                 <button type="submit" class="btn btn-primary mt-3">Entrar</button>
             </div>
             <div class="text-center mt-3">
-                <a href="#">Cadastre-se</a>
+                <a href="jsp/cadastro.jsp">Cadastre-se</a>
             </div>
         </form>
     </div>

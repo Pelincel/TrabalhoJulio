@@ -14,7 +14,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         padding: 30px;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        background-color: #f8f9fa;
+        background-color: red;
     }
 .login-form {
     width: 100%;
