@@ -1,16 +1,21 @@
-<%-- 
-    Document   : alunos.jsp
-    Created on : 31 de out. de 2024, 08:48:49
-    Author     : Administrador
---%>
-
 <%@page import="java.sql.*" %>
 <%@page import="com.mycompany.trabalhojulio.dbconnect.dbconnect" %>
-
-<style>
+<%@page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alunos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
         .details { display: none; }
     </style>
-   <body>
+</head>
+<body>
     <div class="container">
         <h2 class="mt-4">Lista de Alunos</h2>
         <table class="table table-bordered mt-3">
@@ -44,12 +49,12 @@
                 </tr>
                 <tr id="details-<%= alunoId %>" class="details">
                     <td colspan="2">
-                        <strong>Código de Matrícula:</strong> <%= matricula %><br>
+                        <strong>CÃ³digo de MatrÃ­cula:</strong> <%= matricula %><br>
                         <strong>Data de Nascimento:</strong> <%= dataNascimento %><br>
-                        <strong>Endereço:</strong> <%= endereco %><br>
+                        <strong>EndereÃ§o:</strong> <%= endereco %><br>
                         <strong>Telefone:</strong> <%= telefone %><br>
                         <strong>Email:</strong> <%= email %><br>
-                        <button class="btn btn-secondary mt-2" onclick="loadDisciplinas(<%= alunoId %>)">Ver Disciplinas</button>
+                        <button class="btn btn-info btn-sm" onclick="loadDisciplinas(<%= alunoId %>)">Ver Disciplinas</button>
                     </td>
                 </tr>
                 <%
@@ -79,36 +84,46 @@
         </div>
     </div>
 
-   
     <script>
         function toggleDetails(alunoId) {
             var detailsRow = document.getElementById("details-" + alunoId);
-            detailsRow.style.display = (detailsRow.style.display === "none") ? "table-row" : "none";
+            detailsRow.style.display = (detailsRow.style.display === "none" || detailsRow.style.display === "") ? "table-row" : "none";
         }
 
         function loadDisciplinas(alunoId) {
-    const disciplinasList = document.getElementById("disciplinasList");
-    disciplinasList.innerHTML = "Carregando...";
+    console.log("Carregando disciplinas para o aluno com ID:", alunoId); // Log do alunoId
+    if (!alunoId) {
+        console.error("ID do aluno nÃ£o fornecido");
+        return;
+    }
 
-    // Caminho dinâmico usando contextPath
-    fetch(`${pageContext.request.contextPath}/DisciplinasServlet?alunoId=${alunoId}`)
-        .then(response => response.json())
-        .then(data => {
-            disciplinasList.innerHTML = "";
-            if (data.length === 0) {
-                disciplinasList.innerHTML = "<li class='list-group-item'>Nenhuma disciplina encontrada</li>";
-            } else {
-                data.forEach(disciplina => {
-                    disciplinasList.innerHTML += `<li class='list-group-item'>${disciplina.nomeDisciplina} - Status: ${disciplina.status}</li>`;
-                });
+    // Limpa a lista de disciplinas
+    document.getElementById("disciplinasList").innerHTML = '';
+
+    // Chama o fetch com o alunoId
+    fetch(`/trabalhojulio/DisciplinasServlet?alunoId=${alunoId}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro na rede');
             }
-            new bootstrap.Modal(document.getElementById("disciplinasModal")).show();
+            return response.json();
+        })
+        .then(data => {
+            // Adiciona as disciplinas Ã  lista
+            const disciplinasList = document.getElementById("disciplinasList");
+            data.forEach(disciplina => {
+                const listItem = document.createElement("li");
+                listItem.className = "list-group-item";
+                listItem.textContent = `${disciplina.nomeDisciplina} - Status: ${disciplina.status}`;
+                disciplinasList.appendChild(listItem);
+            });
+            // Abre o modal com a lista de disciplinas
+            $('#disciplinasModal').modal('show');
         })
         .catch(error => {
-            disciplinasList.innerHTML = "<li class='list-group-item'>Erro ao carregar disciplinas</li>";
+            console.error('Erro:', error);
         });
 }
-
 
     </script>
 </body>
