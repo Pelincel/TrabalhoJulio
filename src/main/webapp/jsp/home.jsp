@@ -48,32 +48,40 @@
     </style>
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
+  <div class="sidebar">
         <h2 class="text-center">Menu</h2>
-        <a href="#home">Home</a>
-        <a href="#alunos">Alunos</a>
-        <a href="#professores">Professores</a>
-        <a href="#disciplinas">Disciplinas</a>
-        <a href="#turmas">Turmas</a>
-        <a href="#cursos">Cursos</a>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('alunos')">Alunos</a>
+        <a href="#" onclick="showSection('professores')">Professores</a>
     </div>
 
     <!-- Main Content -->
     <div class="content">
-        <!-- Header -->
         <div class="header">
             <h1>Página Principal</h1>
             <p>Bem-vindo à plataforma de gestão educacional</p>
         </div>
         
-        <!-- Main Section -->
-        <div class="main-section mt-4">
-            <h2>SE CHEGOU AQUI, FUNCIONOU</h2>
-            <p>Escolha uma opção no menu para continuar.</p>
+        <!-- Sessões incluídas dinamicamente -->
+        <div id="home-section" class="main-section">
+           
+        </div>
+        <div id="alunos-section" class="main-section" style="display:none;">
+            <jsp:include page="alunos.jsp" />
+        </div>
+        <div id="professores-section" class="main-section" style="display:none;">
+            <jsp:include page="professores.jsp" />
         </div>
     </div>
 
+    <script>
+        function showSection(sectionId) {
+            // Oculta todas as seções
+            document.querySelectorAll('.main-section').forEach(section => section.style.display = 'none');
+            // Mostra a seção selecionada
+            document.getElementById(sectionId + '-section').style.display = 'block';
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+7hZp6YI1bo4VOA3BXyZsTobEfzq8" crossorigin="anonymous"></script>
 </body>
 </html>
