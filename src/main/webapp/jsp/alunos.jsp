@@ -1,5 +1,6 @@
 <%@page import="java.sql.*" %>
 <%@page import="com.mycompany.trabalhojulio.dbconnect.dbconnect" %>
+<<<<<<< Updated upstream
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
@@ -11,8 +12,11 @@
     <link rel="stylesheet" href="style.css"> <!-- Link to your custom CSS -->
     <title>Disciplinas do Aluno</title>
 </head>
+=======
+
+>>>>>>> Stashed changes
 <style>
-    .details { display: none; }
+    .aluno-details { display: none; }
 </style>
 
 <body>
@@ -31,7 +35,7 @@
                         String query = "SELECT * FROM alunos";
                         try (PreparedStatement stmt = conn.prepareStatement(query);
                              ResultSet rs = stmt.executeQuery()) {
-                             
+
                             while (rs.next()) {
                                 int alunoId = rs.getInt("aluno_id");
                                 String matricula = rs.getString("codigo_matricula");
@@ -44,17 +48,16 @@
                 <tr>
                     <td><%= nome %></td>
                     <td>
-                        <button class="btn btn-info btn-sm" onclick="toggleDetails(<%= alunoId %>)">Ver detalhes</button>
+                        <button class="btn btn-info btn-sm" onclick="toggleAlunoDetails(<%= alunoId %>)">Ver detalhes</button>
                     </td>
                 </tr>
-                <tr id="details-<%= alunoId %>" class="details">
+                <tr id="aluno-details-<%= alunoId %>" class="aluno-details">
                     <td colspan="2">
                         <strong>Código de Matrícula:</strong> <%= matricula %><br>
                         <strong>Data de Nascimento:</strong> <%= dataNascimento %><br>
                         <strong>Endereço:</strong> <%= endereco %><br>
                         <strong>Telefone:</strong> <%= telefone %><br>
                         <strong>Email:</strong> <%= email %><br>
-                        <!-- Botão para carregar disciplinas -->
                         <button class="btn btn-info btn-sm" onclick="window.location.href='disciplinas.jsp?alunoId=<%= alunoId %>'">Ver Disciplinas</button>
                     </td>
                 </tr>
@@ -71,9 +74,9 @@
     </div>
 
     <script>
-        function toggleDetails(alunoId) {
-            var detailsRow = document.getElementById("details-" + alunoId);
-            detailsRow.style.display = (detailsRow.style.display === "none") ? "table-row" : "none";
+        function toggleAlunoDetails(alunoId) {
+            var detailsRow = document.getElementById("aluno-details-" + alunoId);
+            detailsRow.style.display = (detailsRow.style.display === "none" || detailsRow.style.display === "") ? "table-row" : "none";
         }
     </script>
 </body>

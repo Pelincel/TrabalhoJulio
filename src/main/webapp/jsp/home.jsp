@@ -82,7 +82,7 @@
             document.getElementById(sectionId + '-section').style.display = 'block';
         }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+7hZp6YI1bo4VOA3BXyZsTobEfzq8" crossorigin="anonymous"></script>
+
 </body>
 </html>
 
