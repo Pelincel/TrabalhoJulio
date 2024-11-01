@@ -10,15 +10,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to your custom CSS -->
     <title>Disciplinas do Aluno</title>
 </head>
 <body>
-    <div class="container">
-        <header class="mt-4">
-            <h1>Disciplinas do Aluno</h1>
-            <a href="home.jsp" class="btn btn-primary">Voltar</a>
-        </header>
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="h3">Disciplinas do Aluno</h1>
+                <a href="home.jsp" class="btn btn-light">Voltar</a>
+            </div>
+        </div>
+    </header>
 
+    <div class="container mt-4">
         <%
             int alunoId = Integer.parseInt(request.getParameter("alunoId"));
             String alunoNome = "";
@@ -64,34 +69,37 @@
         %>
 
         <h4>Disciplinas de: <%= alunoNome %></h4>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Disciplina</th>
-                    <th>Status</th>
-                    <th>Nota</th>
-                </tr>
-            </thead>
-            <tbody>
-                <%
-                    for (Map<String, String> disciplina : disciplinas) {
-                %>
-                <tr>
-                    <td><%= disciplina.get("nomeDisciplina") %></td>
-                    <td><%= disciplina.get("status") %></td>
-                    <td><%= disciplina.get("nota") %></td>
-                </tr>
-                <%
-                    }
-                %>
-            </tbody>
-        </table>
+        
+        <div class="info-div mt-4 p-3 border rounded shadow-sm" style="background-color: #ffffff;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Disciplina</th>
+                        <th>Status</th>
+                        <th>Nota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                        for (Map<String, String> disciplina : disciplinas) {
+                    %>
+                    <tr>
+                        <td><%= disciplina.get("nomeDisciplina") %></td>
+                        <td><%= disciplina.get("status") %></td>
+                        <td><%= disciplina.get("nota") %></td>
+                    </tr>
+                    <%
+                        }
+                    %>
+                </tbody>
+            </table>
 
-        <%
-            if (disciplinas.isEmpty()) {
-                out.println("<p>Nenhuma disciplina encontrada para este aluno.</p>");
-            }
-        %>
+            <%
+                if (disciplinas.isEmpty()) {
+                    out.println("<p>Nenhuma disciplina encontrada para este aluno.</p>");
+                }
+            %>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

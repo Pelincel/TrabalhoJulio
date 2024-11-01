@@ -1,0 +1,30 @@
+body {
+    background-color: #6a1e0e; /* Light background for contrast */
+}
+
+h1 {
+    color: #343a40; /* Dark color for headers */
+}
+
+h4 {
+    margin-top: 20px; /* Space above the student name */
+    color: #007bff; /* Bootstrap primary color for emphasis */
+}
+
+.table th {
+    background-color: #007bff; /* Bootstrap primary color for table header */
+    color: white; /* White text for contrast */
+}
+
+.table tbody tr:hover {
+    background-color: #e2e6ea; /* Light gray on row hover */
+}
+
+.btn-primary {
+    background-color: #0056b3; /* Darker blue for button */
+    border-color: #0056b3; /* Consistent border color */
+}
+
+.btn-primary:hover {
+    background-color: #004085; /* Darker on hover */
+}
