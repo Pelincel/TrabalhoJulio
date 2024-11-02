@@ -24,28 +24,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>SISCEEP - Login</title>
-    <style>
- 
-    </style>
 </head>
+
+<style>
+    
+</style>
+
 <body>
 <div class="login-container">
     <div class="login-form">
-        <h3 class="text-center mb-4">Login</h3>
+        <h3 class="text-center mb-4">SISCEEP</h3>
         <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
-    <div class="form-group">
+    <div class="form-group text-center inputs-form">
         <label for="email">E-mail</label>
         <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu e-mail" required>
     </div>
-    <div class="form-group">
+    <div class="form-group text-center inputs-form">
         <label for="password">Senha</label>
         <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha" required>
     </div>
     <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary mt-3">Entrar</button>
+        <button type="submit" class="btn btn-primary mt-3 botao">Entrar</button>
     </div>
     <div class="text-center mt-3">
-        <a href="jsp/cadastro.jsp">Cadastre-se</a>
+        <a href="jsp/cadastro.jsp" class="link">Cadastre-se</a>
     </div>
 </form>
 

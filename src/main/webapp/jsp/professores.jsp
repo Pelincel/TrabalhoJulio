@@ -1,13 +1,20 @@
 <%@page import="java.sql.*" %>
 <%@page import="com.mycompany.trabalhojulio.dbconnect.dbconnect" %>
 
+<%
+    if (session.getAttribute("usuario_logado") == null) {
+        response.sendRedirect("../index.jsp");
+        return;
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <title>Lista de Professores</title>
     <style>
-        .professor-details { display: none; } /* Inicialmente esconde os detalhes dos professores */
+        .professor-details { display: none; }
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>

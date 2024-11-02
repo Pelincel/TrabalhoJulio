@@ -4,6 +4,13 @@
     Author     : silva
 --%>
 
+<%
+    if (session.getAttribute("usuario_logado") == null) {
+        response.sendRedirect("../index.jsp");
+        return;
+    }
+%>
+
 <%@page import="java.sql.*" %>
 <%@page import="com.mycompany.trabalhojulio.dbconnect.dbconnect" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

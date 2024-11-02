@@ -7,8 +7,12 @@
 <%@page import="java.sql.*" %>
 <%@page import="com.mycompany.trabalhojulio.dbconnect.dbconnect" %>
 
-<%@page import="java.sql.*" %>
-<%@page import="com.mycompany.trabalhojulio.dbconnect.dbconnect" %>
+<%
+    if (session.getAttribute("usuario_logado") == null) {
+        response.sendRedirect("../index.jsp");
+        return;
+    }
+%>
 
 <!DOCTYPE html>
 <html lang="pt-BR">

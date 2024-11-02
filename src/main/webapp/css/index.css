@@ -1,26 +1,50 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 30 de out. de 2024, 10:50:11
-    Author     : Administrador
-*/
-       .login-container {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        margin-top: 100px;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        background-color: red;
-    }
-.login-form {
+:root {
+    --cor-fundo: #901515;
+    --cor-fundo-secundaria: #b72727;
+    --cor-bloco-login: #e2ad7e;
+}
+
+body {
+    background-color: var(--cor-fundo);
+}
+
+.login-container {
     width: 100%;
     max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
     padding: 30px;
-    background: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: var(--cor-bloco-login);
+}
+
+.login-form {
+width: 100%;
+max-width: 400px;
+padding: 30px;
+background-color:var(--cor-bloco-login);
+border-radius: 8px;
+}
+
+.inputs-form {
+    margin-top: 4%;
+}
+
+.botao {
+    background-color: var(--cor-fundo);
+    border-color: var(--cor-fundo);
+}
+
+.botao:hover {
+    background-color: var(--cor-fundo-secundaria);
+    border-color: var(--cor-fundo-secundaria);
+}
+
+.link {
+    color: var(--cor-fundo-secundaria);
+}
+
+.link:hover {
+    color: var(--cor-fundo);
 }

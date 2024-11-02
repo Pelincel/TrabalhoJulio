@@ -4,6 +4,14 @@
     Author     : silva
 --%>
 
+<%
+    // Verifica se o usuário está logado
+    if (session.getAttribute("usuario_logado") == null) {
+        response.sendRedirect("../index.jsp");
+        return; // Para garantir que o restante do código não seja executado
+    }
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">

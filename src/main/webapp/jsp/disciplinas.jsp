@@ -4,6 +4,13 @@
 <%@page import="java.util.HashMap" %>
 <%@page import="java.util.Map" %>
 
+<%
+    if (session.getAttribute("usuario_logado") == null) {
+        response.sendRedirect("../index.jsp");
+        return;
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
