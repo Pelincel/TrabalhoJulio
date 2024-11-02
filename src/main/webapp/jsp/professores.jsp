@@ -49,6 +49,9 @@
                         <strong>Data de Contratação:</strong> <%= dataContrato %><br>
                         <strong>Telefone:</strong> <%= telefone %><br>
                         <strong>Email:</strong> <%= email %><br>
+                        <button class="btn btn-secondary btn-sm mt-2" onclick="window.location.href='info_professores.jsp?professorId=<%= professorId %>'">
+            Mais Informações
+        </button>
                     </td>
                 </tr>
                 <%

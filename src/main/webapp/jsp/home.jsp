@@ -53,6 +53,7 @@
         <a href="#" onclick="showSection('home')">Home</a>
         <a href="#" onclick="showSection('alunos')">Alunos</a>
         <a href="#" onclick="showSection('professores')">Professores</a>
+        <a href="#" onclick="showSection('cursos')">Cursos</a>
     </div>
 
     <!-- Main Content -->
@@ -71,6 +72,10 @@
         </div>
         <div id="professores-section" class="main-section" style="display:none;">
             <jsp:include page="professores.jsp" />
+        </div>
+        
+        <div id="cursos-section" class="main-section" style="display:none;">
+            <jsp:include page="cursos.jsp" />
         </div>
     </div>
 

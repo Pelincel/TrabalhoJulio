@@ -130,6 +130,7 @@ CREATE TABLE professor_especializacoes (
     FOREIGN KEY (professor_id) REFERENCES professores(professor_id) ON DELETE CASCADE,
     FOREIGN KEY (especializacao_id) REFERENCES especializacoes(especializacao_id) ON DELETE CASCADE
 );
+
 -- 13. Tabela de Usuários
 CREATE TABLE usuarios (
     usuario_id SERIAL PRIMARY KEY,
