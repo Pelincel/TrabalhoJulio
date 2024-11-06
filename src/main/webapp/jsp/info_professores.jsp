@@ -7,24 +7,19 @@
     <meta charset="UTF-8">
     <title>Informações do Professor</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Adicionando o CSS personalizado -->
     <link rel="stylesheet" href="../css/info_professores.css">
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
 
     <!-- Header (Cabeçalho) -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <div class="d-flex justify-content-between w-100 align-items-center">
-                    <!-- Título centralizado -->
-                    <h1 class="h3 text-center flex-grow-1">Informações do Professor</h1>
-                    
-                    <!-- Botão 'Voltar' alinhado à direita -->
-                    <a href="home.jsp" class="btn btn-light">Voltar</a>
-                </div>
+        <header class="py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3>CeepSystem</h3>
+                <a href="home.jsp"><img src="../img/icons/home1.svg" /></a>
             </div>
-        </nav>
+        </div>
     </header>
 
     <!-- Div centralizada para o conteúdo -->

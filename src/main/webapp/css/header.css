@@ -1,0 +1,18 @@
+/* 
+    Created on : 6 de nov. de 2024, 11:33:34
+    Author     : Administrador
+*/
+
+header {
+    background-color: #400106;
+    color: white;
+}
+
+header a img {
+    transition: fill 0.3s ease; /* Transição suave para a cor */
+}
+
+header a:hover img {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(66%) saturate(1919%) hue-rotate(329deg) brightness(93%) contrast(90%);
+}
+

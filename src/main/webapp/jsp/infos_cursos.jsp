@@ -56,6 +56,8 @@
 <head>
     <meta charset="UTF-8">
     <title><%= cursoNome %> - Informações</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/header.css">
     <style>
         .alunos {
             display: none; /* Esconder inicialmente */
@@ -64,6 +66,14 @@
     </style>
 </head>
 <body>
+     <header class="py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3>CeepSystem</h3>
+                <a href="home.jsp"><img src="../img/icons/home1.svg" /></a>
+            </div>
+        </div>
+    </header>
     <h1>Detalhes do Curso: <%= cursoNome %></h1>
     
     <table border="1">

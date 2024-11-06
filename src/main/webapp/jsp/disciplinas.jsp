@@ -12,15 +12,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css"> <!-- Link to your custom CSS -->
+    <link rel="stylesheet" href="../css/disciplinas.css"> 
+    <link rel="stylesheet" href="../css/header.css"> 
     <title>Disciplinas do Aluno</title>
 </head>
 <body>
-    <header class="bg-primary text-white py-3">
+    <header class=" py-3">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h1 class="h3">Disciplinas do Aluno</h1>
-                <a href="home.jsp" class="btn btn-light">Voltar</a>
+                <h3>CeepSystem</h3>
+                <a href="home.jsp"><img src="../img/icons/home1.svg" /></a>
             </div>
         </div>
     </header>
