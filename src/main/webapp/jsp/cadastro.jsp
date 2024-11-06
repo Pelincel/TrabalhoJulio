@@ -4,13 +4,6 @@
     Author     : Administrador
 --%>
 
-<%
-    if (session.getAttribute("usuario_logado") == null) {
-        response.sendRedirect("../index.jsp");
-        return;
-    }
-%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
