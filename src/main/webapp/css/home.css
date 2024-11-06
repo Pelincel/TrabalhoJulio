@@ -1,0 +1,79 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 6 de nov. de 2024, 14:02:01
+    Author     : silva
+*/
+
+:root {
+    --cor-fundo: #FAA682;
+    --cor-header: #400106;
+    --cor-texto: #fff; 
+    --cor-texto-sec:#c5c5c5;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--cor-fundo); /* Para garantir fundo enquanto a imagem carrega */
+}
+
+/* Pseudo-elemento para o fundo desfocado */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/ceepbg.JPG') no-repeat center center; /* Caminho correto */
+    background-size: cover;
+    filter: blur(4px); /* Ajuste o valor do blur conforme necessário */
+    z-index: -1; /* Garante que a imagem fique atrás de todo o conteúdo */
+}
+
+/* Container de conteúdo */
+.container {
+    position: relative;
+    z-index: 1; /* Faz com que o conteúdo fique acima do fundo */
+    background-color: rgba(255, 255, 255, 0.85); /* Opacidade para dar destaque ao conteúdo */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+
+.main-section {
+    display: none;
+    padding: 20px; /* Ajuste conforme necessário */
+    background-color: var(--cor-fundo);
+    border-radius: 8px;
+}
+
+
+#home-section {
+            display: block;
+        }
+
+.headertop {
+    background-color: var(--cor-header);
+    
+}
+
+.navbar-brand, .nav-link {
+    color: var(--cor-texto);
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: var(--cor-texto-sec);
+}
+
+.fundo {
+    background-color: var(--cor-fundo);
+}

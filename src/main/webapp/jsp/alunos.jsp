@@ -1,9 +1,9 @@
 <%@page import="java.sql.*" %>
 <%@page import="com.mycompany.trabalhojulio.dbconnect.dbconnect" %>
 
-
-
 <style>
+
+    
     .aluno-details { display: none; }
 </style>
 

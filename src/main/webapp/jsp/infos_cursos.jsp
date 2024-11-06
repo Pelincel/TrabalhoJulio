@@ -128,7 +128,7 @@
             alunosContainer.innerHTML = ''; // Limpar conteúdo anterior
             alunosContainer.dataset.turmaId = turmaId; // Armazena o ID da turma
 
-            fetch('buscar_alunos.jsp?turma_id=' + turmaId)
+            fetch('functions/buscar_alunos.jsp?turma_id=' + turmaId)
                 .then(response => response.text())
                 .then(data => {
                     alunosContainer.innerHTML = data;

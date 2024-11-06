@@ -1,29 +1,62 @@
 :root {
-    --cor-fundo: #901515;
-    --cor-fundo-secundaria: #b72727;
-    --cor-bloco-login: #e2ad7e;
+    --cor-fundo: #400106;
+    --cor-botao: #8B0000;;
+    --cor-botao-sec: #B22222;
+    --cor-texto: black;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: var(--cor-fundo);
+    background-image: url('../img/ceepbg.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
+body::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px); /* Ajuste o valor para mais ou menos desfoque */
+    z-index: -1;
+}
+
+
 .login-container {
+    background-color:rgba(255, 255, 255, 0.8); /* ou uma das outras sugestões */
+    color: white;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    margin-top: 100px;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: var(--cor-bloco-login);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 
 .login-form {
 width: 100%;
 max-width: 400px;
 padding: 30px;
-background-color:var(--cor-bloco-login);
+background-color: transparent;
+color:var(--cor-texto);
 border-radius: 8px;
 }
 
@@ -32,19 +65,19 @@ border-radius: 8px;
 }
 
 .botao {
-    background-color: var(--cor-fundo);
-    border-color: var(--cor-fundo);
+    background-color: var(--cor-botao);
+    border-color: var(--cor-botao);
 }
 
 .botao:hover {
-    background-color: var(--cor-fundo-secundaria);
-    border-color: var(--cor-fundo-secundaria);
+    background-color: var(--cor-botao-sec);
+    border-color: var(--cor-botao-sec);
 }
 
 .link {
-    color: var(--cor-fundo-secundaria);
+    color: var(--cor-botao);
 }
 
 .link:hover {
-    color: var(--cor-fundo);
+    color: var(--cor-botao-sec);
 }
