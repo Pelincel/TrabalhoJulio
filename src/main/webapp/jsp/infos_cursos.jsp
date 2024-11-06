@@ -3,12 +3,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 
-<%
-    if (session.getAttribute("usuario_logado") == null) {
-        response.sendRedirect("../index.jsp");
-        return;
-    }
-%>
 
 <%
     int cursoId = Integer.parseInt(request.getParameter("curso_id"));
