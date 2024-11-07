@@ -32,7 +32,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../img/ceepbg.JPG') no-repeat center center; /* Caminho correto */
+    background: url('../img/ceepbg.jpg') no-repeat center center; /* Caminho correto */
     background-size: cover;
     filter: blur(4px); /* Ajuste o valor do blur conforme necessário */
     z-index: -1; /* Garante que a imagem fique atrás de todo o conteúdo */
@@ -45,21 +45,36 @@ body::before {
     background-color: rgba(255, 255, 255, 0.85); /* Opacidade para dar destaque ao conteúdo */
     padding: 20px;
     border-radius: 8px;
+    margin-top: 50px; /* Ajuste o valor conforme necessário */
+    margin-bottom: 50px; /* Ajuste o valor conforme necessário */
+    max-width: 1200px;  /* Limita a largura máxima do container */
+    margin-left: auto;  /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
 }
 
-
-
+/* Centralizando o conteúdo dentro do contêiner */
 .main-section {
     display: none;
     padding: 20px; /* Ajuste conforme necessário */
-    background-color: var(--cor-fundo);
+    background-color: transparent;
     border-radius: 8px;
+    width: 100%; /* Garantir que a largura das seções seja 100% */
+    margin-top: 20px; /* Ajuste o valor conforme necessário */
+}
+
+#home-section {
+    display: block;
 }
 
 
-#home-section {
-            display: block;
-        }
+/* CSS */
+#myChart {
+    max-width: 400px;  /* Limita a largura máxima do gráfico */
+    max-height: 400px; /* Limita a altura máxima do gráfico */
+    width: 100%;       /* Ajusta a largura ao contêiner */
+    height: auto;      /* Impede redimensionamento vertical */
+    margin: 0 auto;    /* Centraliza o gráfico */
+}
 
 .headertop {
     background-color: var(--cor-header);
@@ -76,4 +91,19 @@ body::before {
 
 .fundo {
     background-color: var(--cor-fundo);
+}
+
+/* Centralizando os botões lado a lado */
+.button-container {
+    display: flex;
+    justify-content: center;  /* Centraliza os botões horizontalmente */
+    gap: 10px;                /* Adiciona espaçamento entre os botões */
+    margin-top: 20px;
+}
+
+.button-container .btn {
+    /* Botões pequenos */
+    font-size: 0.875rem;  /* Tamanho pequeno da fonte */
+    padding: 5px 15px;    /* Menor padding para botões menores */
+    height: auto;         /* Permite que o botão se ajuste ao conteúdo */
 }
