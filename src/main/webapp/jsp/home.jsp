@@ -52,10 +52,10 @@
         
         <!-- Botões lado a lado -->
         <div class="button-container">
-            <button class="btn btn-primary btn-sm">ALUNOS</button>
-            <button class="btn btn-primary btn-sm">ALUNOS</button>
-            <button class="btn btn-primary btn-sm">ALUNOS</button>
-            <button class="btn btn-primary btn-sm">ALUNOS</button>
+            <a href="cadaluno.jsp" class="btn btn-primary btn-sm">Cadastrar Aluno</a>
+            <button class="btn btn-primary btn-sm">Cadastrar Professor</button>
+            <button class="btn btn-primary btn-sm">Cadastrar Turma</button>
+            <button class="btn btn-primary btn-sm">Cadastrar Curso</button>
         </div>
     </div>
     <div id="alunos-section" class="main-section">

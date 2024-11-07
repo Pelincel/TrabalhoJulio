@@ -14,4 +14,13 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
     
+    
+    <servlet>
+        <servlet-name>CadalunoServlet</servlet-name>
+        <servlet-class>com.mycompany.trabalhojulio</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadalunoServlet</servlet-name>
+        <url-pattern>/CadalunoServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
