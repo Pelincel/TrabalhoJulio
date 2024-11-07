@@ -29,35 +29,36 @@
      <div class="container mt-5">
         <h2 class="text-center mb-4">Cadastro de Aluno</h2>
         
-        <form action="CadalunoServlet" method="POST">
-            <div class="mb-3">
-                <label for="nome_completo" class="form-label">Nome Completo</label>
-                <input type="text" class="form-control" id="nome_completo" name="nome_completo" required>
-            </div>
-            <div class="mb-3">
-                <label for="data_nascimento" class="form-label">Data de Nascimento</label>
-                <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" required>
-            </div>
-            <div class="mb-3">
-                <label for="endereco" class="form-label">Endereço</label>
-                <textarea class="form-control" id="endereco" name="endereco"></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control" id="telefone" name="telefone">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </div>
-        </form>
+        <form action="${pageContext.request.contextPath}/CadastrarAlunoServlet" method="POST">
+        <label for="codigo_matricula">Número da Matrícula:</label>
+        <input type="text" id="codigo_matricula" name="codigo_matricula" required>
+        <br><br>
+
+        <label for="nome_completo">Nome Completo:</label>
+        <input type="text" id="nome_completo" name="nome_completo" required>
+        <br><br>
+
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" required>
+        <br><br>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required>
+        <br><br>
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" required>
+        <br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+zQFZd6EGGoI1gE4nRI2WIW5OjM20" crossorigin="anonymous"></script>
-</body>
 </body>
 </html>
     
