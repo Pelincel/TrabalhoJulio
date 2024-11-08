@@ -70,6 +70,7 @@
             <a href="cad/caddisciplinas.jsp" class="btn btn-primary btn-sm">Cadastrar Disciplina</a>
             <a href="cad/cadcurso.jsp" class="btn btn-primary btn-sm">Cadastrar Curso</a>
             <a href="cad/cadturma.jsp" class="btn btn-primary btn-sm">Cadastrar Turma</a>
+            <a href="cad/cadespecializacao.jsp" class="btn btn-primary btn-sm">Cadastrar Especialização</a>
 
         </div>
     </div>
