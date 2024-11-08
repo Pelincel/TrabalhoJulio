@@ -13,8 +13,25 @@
     <meta charset="UTF-8">
     <title>Cadastrar Turma</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+       .alert-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .alert-success { background-color: #d4edda; color: #155724; }
+        .alert-error { background-color: #f8d7da; color: #721c24; } 
+        
+    </style>
 </head>
+ 
 <body>
+
     <div class="container">
         <h2 class="mt-4">Cadastrar Nova Turma</h2>
         <form action="${pageContext.request.contextPath}/CadastrarTurmaServlet" method="post">
@@ -60,5 +77,6 @@
             <button type="submit" class="btn btn-primary">Cadastrar Turma</button>
         </form>
     </div>
+
 </body>
 </html>

@@ -30,17 +30,17 @@ public class ExcluirAlunoServlet extends HttpServlet {
                     int rowsAffected = ps.executeUpdate();
                     
                     if (rowsAffected > 0) {
-                        response.getWriter().write("<script>alert('Aluno deletado com sucesso!'); window.location.href='home.jsp';</script>");
+                        response.getWriter().write("<script>alert('Aluno deletado com sucesso!'); window.location.href='jsp/home.jsp';</script>");
                     } else {
-                        response.getWriter().write("<script>alert('Erro ao excluir o aluno.'); window.location.href='home.jsp';</script>");
+                        response.getWriter().write("<script>alert('Erro ao excluir o aluno.'); window.location.href='jsp/home.jsp';</script>");
                     }
                 }
             } catch (SQLException | ClassNotFoundException e) {
-                response.getWriter().write("<script>alert('Erro ao excluir o aluno.'); window.location.href='home.jsp';</script>");
+                response.getWriter().write("<script>alert('Erro ao excluir o aluno.'); window.location.href='jsp/home.jsp';</script>");
                 e.printStackTrace();
             }
         } else {
-            response.getWriter().write("<script>alert('ID de aluno inválido.'); window.location.href='home.jsp';</script>");
+            response.getWriter().write("<script>alert('ID de aluno inválido.'); window.location.href='jsp/home.jsp';</script>");
         }
     }
 }

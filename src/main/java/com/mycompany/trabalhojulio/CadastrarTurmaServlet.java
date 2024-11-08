@@ -66,7 +66,7 @@ public class CadastrarTurmaServlet extends jakarta.servlet.http.HttpServlet {
             errorMessage = "Erro ao conectar com o banco de dados: " + e.getMessage();
             e.printStackTrace();
             request.setAttribute("errorMessage", errorMessage);
-            request.getRequestDispatcher("/cadastrarTurma.jsp").forward(request, response);
+            request.getRequestDispatcher("jsp/cad/cadturma.jsp").forward(request, response);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(CadastrarTurmaServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
