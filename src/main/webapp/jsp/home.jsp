@@ -1,3 +1,16 @@
+<% 
+    String erro = (String) request.getAttribute("erro");
+    if (erro != null) { 
+%>
+    <div style="color: red; font-weight: bold;">
+        <%= erro %>
+    </div>
+<% 
+    } 
+%>
+
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,10 +65,12 @@
         
         <!-- Botões lado a lado -->
         <div class="button-container">
-            <a href="cadaluno.jsp" class="btn btn-primary btn-sm">Cadastrar Aluno</a>
-            <button class="btn btn-primary btn-sm">Cadastrar Professor</button>
-            <button class="btn btn-primary btn-sm">Cadastrar Turma</button>
-            <button class="btn btn-primary btn-sm">Cadastrar Curso</button>
+            <a href="cad/cadaluno.jsp" class="btn btn-primary btn-sm">Cadastrar Aluno</a>
+            <a href="cad/cadprofessor.jsp"class="btn btn-primary btn-sm">Cadastrar Professor</a>
+            <a href="cad/caddisciplinas.jsp" class="btn btn-primary btn-sm">Cadastrar Disciplina</a>
+            <a href="cad/cadcurso.jsp" class="btn btn-primary btn-sm">Cadastrar Curso</a>
+            <a href="cad/cadturma.jsp" class="btn btn-primary btn-sm">Cadastrar Turma</a>
+
         </div>
     </div>
     <div id="alunos-section" class="main-section">

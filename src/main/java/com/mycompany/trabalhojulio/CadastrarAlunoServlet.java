@@ -91,7 +91,7 @@ public class CadastrarAlunoServlet extends HttpServlet {
         response.getWriter().write("<html><head><title>Resultado</title></head><body>");
         response.getWriter().write("<script type='text/javascript'>");
         response.getWriter().write("alert('" + mensagem + "');");
-        response.getWriter().write("window.location.href = 'jsp/cadaluno.jsp';");  // Redireciona para a página de cadastro
+        response.getWriter().write("window.location.href = 'jsp/cad/cadaluno.jsp';");  // Redireciona para a página de cadastro
         response.getWriter().write("</script>");
         response.getWriter().write("</body></html>");
     }
