@@ -12,20 +12,20 @@
         // Conectar ao banco de dados
         conn = dbconnect.getConnection();
 
-        // Consulta SQL
+        // Consulta SQL com ajuste para contar alunos matriculados no curso correto
         String sql = "SELECT c.nome AS curso, COUNT(m.aluno_id) AS total_alunos " +
                      "FROM cursos c " +
-                     "JOIN curso_disciplinas cd ON c.curso_id = cd.curso_id " +
-                     "JOIN disciplinas d ON cd.disciplina_id = d.disciplina_id " +
-                     "JOIN turma_disciplinas td ON d.disciplina_id = td.disciplina_id " +
-                     "JOIN turmas t ON td.turma_id = t.turma_id " +
-                     "LEFT JOIN matriculas m ON t.turma_id = m.turma_id " +
+                     "JOIN curso_turmas ct ON c.curso_id = ct.curso_id " + // Relaciona cursos com turmas
+                     "JOIN turmas t ON ct.turma_id = t.turma_id " +
+                     "JOIN turma_disciplinas td ON t.turma_id = td.turma_id " + 
+                     "JOIN disciplinas d ON td.disciplina_id = d.disciplina_id " +
+                     "LEFT JOIN matriculas m ON t.turma_id = m.turma_id AND m.curso_id = c.curso_id " + // Garante que a matrícula é do curso específico
                      "GROUP BY c.curso_id;";
 
         stmt = conn.prepareStatement(sql);
         rs = stmt.executeQuery();
 
-        // Preencher listas
+        // Preencher listas com os dados dos cursos e número de alunos
         while (rs.next()) {
             cursos.add(rs.getString("curso"));
             alunosPorCurso.add(rs.getInt("total_alunos"));

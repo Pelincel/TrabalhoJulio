@@ -39,27 +39,40 @@ body::before {
 }
 
 /* Container de conteúdo */
+/* Reduz o espaço ao redor do contêiner */
 .container {
     position: relative;
     z-index: 1; /* Faz com que o conteúdo fique acima do fundo */
     background-color: rgba(255, 255, 255, 0.85); /* Opacidade para dar destaque ao conteúdo */
-    padding: 20px;
     border-radius: 8px;
-    margin-top: 50px; /* Ajuste o valor conforme necessário */
-    margin-bottom: 50px; /* Ajuste o valor conforme necessário */
     max-width: 1200px;  /* Limita a largura máxima do container */
     margin-left: auto;  /* Centraliza horizontalmente */
     margin-right: auto; /* Centraliza horizontalmente */
+    margin-top: 10px;   /* Adiciona um pequeno espaço acima */
+    padding-top: 10px;  /* Reduz o padding superior */
 }
+
+/* Ajuste a tabela para remover o espaçamento indesejado */
+.table-container {
+    max-height: 400px; /* Defina a altura máxima que você deseja para a tabela */
+    overflow-y: auto;  /* Ativa a rolagem vertical */
+    margin-top: 0;     /* Remove a margem superior da tabela */
+    padding-top: 0;    /* Remove o padding superior da tabela */
+}
+
+/* Ajuste a margem da tabela para eliminar espaço adicional */
+table.table {
+    margin-top: 0;  /* Remove a margem superior */
+    padding-top: 0; /* Remove o padding superior */
+}
+
 
 /* Centralizando o conteúdo dentro do contêiner */
 .main-section {
     display: none;
-    padding: 20px; /* Ajuste conforme necessário */
     background-color: transparent;
     border-radius: 8px;
     width: 100%; /* Garantir que a largura das seções seja 100% */
-    margin-top: 20px; /* Ajuste o valor conforme necessário */
 }
 
 #home-section {

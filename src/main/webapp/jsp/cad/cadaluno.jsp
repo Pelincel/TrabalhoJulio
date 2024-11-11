@@ -4,61 +4,124 @@
     Author     : Administrador
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="com.mycompany.trabalhojulio.dbconnect.dbconnect" %>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>InformaÃ§Ãµes do Professor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aluno</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/cadaluno.css">
-    <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
-
-    <!-- Header (CabeÃ§alho) -->
-        <header class="py-3">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <h3>CeepSystem</h3>
-                <a href="home.jsp"><img src="../img/icons/home1.svg" /></a>
+    <div class="container mt-5">
+        <h4>Cadastro de Aluno</h4>
+        <form action="${pageContext.request.contextPath}/CadastrarAlunoServlet" method="post">
+            <!-- Campo para Matrícula -->
+            <div class="form-group">
+                <label for="matricula">Matrícula:</label>
+                <input type="text" name="matricula" id="matricula" class="form-control" required>
             </div>
-        </div>
-    </header>
-    
-     <div class="container mt-5">
-        <h2 class="text-center mb-4">Cadastro de Aluno</h2>
-        
-        <form action="${pageContext.request.contextPath}/CadastrarAlunoServlet" method="POST">
-        <label for="codigo_matricula">NÃºmero da MatrÃ­cula:</label>
-        <input type="text" id="codigo_matricula" name="codigo_matricula" required>
-        <br><br>
 
-        <label for="nome_completo">Nome Completo:</label>
-        <input type="text" id="nome_completo" name="nome_completo" required>
-        <br><br>
+            <!-- Campo para Nome Completo -->
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" name="nome" id="nome" class="form-control" required>
+            </div>
 
-        <label for="data_nascimento">Data de Nascimento:</label>
-        <input type="date" id="data_nascimento" name="data_nascimento" required>
-        <br><br>
+             <!-- Data de Nascimento -->
+            <!-- Data de Nascimento -->
+<div class="form-group">
+    <label for="dataNascimento">Data de Nascimento:</label>
+    <input type="date" name="data_nascimento" id="dataNascimento" class="form-control" required>
+</div>
 
-        <label for="endereco">EndereÃ§o:</label>
-        <input type="text" id="endereco" name="endereco" required>
-        <br><br>
 
-        <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" name="telefone" required>
-        <br><br>
+            <!-- Endereço -->
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <textarea name="endereco" id="endereco" class="form-control" rows="3" required></textarea>
+            </div>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
+            <!-- Telefone -->
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" id="telefone" class="form-control" required>
+            </div>
 
-        <button type="submit">Cadastrar</button>
-    </form>
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="form-control" required>
+            </div>
+            
+            <!-- Selecionar Curso -->
+            <div class="form-group">
+               <label for="curso">Selecione o Curso:</label>
+<select id="curso" name="curso" class="form-control" onchange="fetchTurmas()">
+    <option value="">Selecione um curso</option>
+    <% 
+        // Carregar cursos do banco de dados
+        try (Connection conn = dbconnect.getConnection()) {
+            String queryCursos = "SELECT curso_id, nome FROM cursos";
+            try (PreparedStatement stmtCursos = conn.prepareStatement(queryCursos)) {
+                ResultSet rsCursos = stmtCursos.executeQuery();
+                while (rsCursos.next()) {
+    %>
+    <option value="<%= rsCursos.getInt("curso_id") %>"><%= rsCursos.getString("nome") %></option>
+    <% 
+                }
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    %>
+</select>
+
+            </div>
+            <!-- Selecionar Turma -->
+            <div class="form-group">
+                <label for="turma">Turma:</label>
+                <select name="turma" id="turma" class="form-control" required>
+                    <option value="">Selecione uma turma</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Cadastrar Aluno</button>
+        </form>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+zQFZd6EGGoI1gE4nRI2WIW5OjM20" crossorigin="anonymous"></script>
+<script>
+    function fetchTurmas() {
+        const cursoSelect = document.getElementById("curso");
+        const cursoId = cursoSelect.value;
+        const turmaSelect = document.getElementById("turma");
+
+        // Verifique se um curso foi selecionado antes de fazer a requisição
+        if (!cursoId || cursoId === "") {
+            turmaSelect.innerHTML = '<option value="">Selecione um curso válido</option>';
+            return;
+        }
+
+        // Limpar as opções anteriores
+        turmaSelect.innerHTML = '<option value="">Carregando...</option>';
+
+        // Definir o contexto da aplicação no lado do cliente
+        const contextPath = "<%= request.getContextPath() %>";
+        const url = contextPath + "/jsp/functions/buscar_turmas.jsp?cursoId=" + encodeURIComponent(cursoId);
+
+        // Fazer a requisição usando fetch
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                turmaSelect.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro ao buscar turmas:', error);
+                turmaSelect.innerHTML = '<option value="">Erro ao carregar turmas</option>';
+            });
+    }
+</script>
 </body>
 </html>
-    

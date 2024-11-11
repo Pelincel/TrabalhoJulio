@@ -39,7 +39,7 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <h3>CeepSystem</h3>
-                <a href="home.jsp"><img src="../../img/icons/home1.svg" /></a>
+                <a href="../home.jsp"><img src="../../img/icons/home1.svg" /></a>
             </div>
         </div>
     </header>

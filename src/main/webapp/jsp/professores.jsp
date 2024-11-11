@@ -9,18 +9,12 @@
     <style>
         .professor-details { display: none; }
         /* Estilo para a tabela com rolagem */
-        .scrollable-table {
-            max-height: 400px; /* Defina a altura máxima conforme necessário */
-            overflow-y: auto;  /* Permite rolagem vertical */
-        }
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="">
-        <h2 class="mt-4">Lista de Professores</h2>
         <div class="scrollable-table">
-            <table class="table table-bordered mt-3">
+            <table class="table table-bordered ">
                 <thead>
                     <tr>
                         <th>Nome do Professor</th>
@@ -81,7 +75,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
 
     <script>
         function toggleProfessorDetails(professorId) {

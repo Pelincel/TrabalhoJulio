@@ -36,16 +36,19 @@ CREATE TABLE turmas (
     ano_semestre VARCHAR(10) NOT NULL
 );
 
--- 5. Tabela de Matrículas
+-- 5. Tabela de Matrículas (Atualizada)
 CREATE TABLE matriculas (
     matricula_id SERIAL PRIMARY KEY,
     aluno_id INT NOT NULL,
     turma_id INT NOT NULL,
+    curso_id INT NOT NULL,
     data_realizacao DATE NOT NULL,
     status VARCHAR(20) CHECK (status IN ('ativa', 'trancada', 'concluída')),
     FOREIGN KEY (aluno_id) REFERENCES alunos(aluno_id) ON DELETE CASCADE,
-    FOREIGN KEY (turma_id) REFERENCES turmas(turma_id) ON DELETE CASCADE
+    FOREIGN KEY (turma_id) REFERENCES turmas(turma_id) ON DELETE CASCADE,
+    FOREIGN KEY (curso_id) REFERENCES cursos(curso_id) ON DELETE CASCADE
 );
+
 
 -- 6. Tabela de Avaliações
 CREATE TABLE avaliacoes (
@@ -131,7 +134,16 @@ CREATE TABLE professor_especializacoes (
     FOREIGN KEY (especializacao_id) REFERENCES especializacoes(especializacao_id) ON DELETE CASCADE
 );
 
--- 13. Tabela de Usuários
+-- 13. Tabela de Cursos e Turmas
+CREATE TABLE curso_turmas (
+    curso_id INT NOT NULL,
+    turma_id INT NOT NULL,
+    PRIMARY KEY (curso_id, turma_id),
+    FOREIGN KEY (curso_id) REFERENCES cursos(curso_id) ON DELETE CASCADE,
+    FOREIGN KEY (turma_id) REFERENCES turmas(turma_id) ON DELETE CASCADE
+);
+
+-- 14. Tabela de Usuários
 CREATE TABLE usuarios (
     usuario_id SERIAL PRIMARY KEY,
     nome_usuario VARCHAR(50) UNIQUE NOT NULL,

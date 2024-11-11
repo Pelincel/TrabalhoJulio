@@ -17,10 +17,8 @@
 </style>
 
 <body>
-    <div class="">
-        <h2 class="mt-4">Lista de Alunos</h2>
         <div class="table-container">
-            <table class="table table-bordered mt-3">
+            <table class="table table-bordered ">
                 <thead>
                     <tr>
                         <th>Nome do Aluno</th>
@@ -71,7 +69,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
 
     <script>
         function toggleAlunoDetails(alunoId) {
