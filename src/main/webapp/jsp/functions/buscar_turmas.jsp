@@ -19,13 +19,13 @@
 
         // Conectar ao banco de dados e buscar as turmas correspondentes ao curso
         try (Connection conn = dbconnect.getConnection()) {
+            // Query para buscar as turmas associadas ao curso pela tabela curso_turmas
             String query = "SELECT t.turma_id, t.nome " +
                            "FROM turmas t " +
-                           "JOIN turma_disciplinas td ON t.turma_id = td.turma_id " +
-                           "JOIN curso_disciplinas cd ON td.disciplina_id = cd.disciplina_id " +
-                           "WHERE cd.curso_id = ?";
+                           "JOIN curso_turmas ct ON t.turma_id = ct.turma_id " +
+                           "WHERE ct.curso_id = ?";
             try (PreparedStatement stmt = conn.prepareStatement(query)) {
-                stmt.setInt(1, cursoIdInt);
+                stmt.setInt(1, cursoIdInt); // Passando o cursoId como parâmetro
 
                 ResultSet rs = stmt.executeQuery();
 

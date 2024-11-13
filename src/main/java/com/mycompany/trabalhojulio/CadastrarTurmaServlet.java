@@ -40,8 +40,8 @@ public class CadastrarTurmaServlet extends jakarta.servlet.http.HttpServlet {
                         if (rs.next()) {
                             int turmaId = rs.getInt(1); // ID gerado da turma
 
-                            // Associando o curso à turma
-                            String queryCursoTurma = "UPDATE turmas SET curso_id = ? WHERE turma_id = ?";
+                            // Associando a turma ao curso na tabela curso_turmas
+                            String queryCursoTurma = "INSERT INTO curso_turmas (curso_id, turma_id) VALUES (?, ?)";
                             try (PreparedStatement stmtCursoTurma = conn.prepareStatement(queryCursoTurma)) {
                                 stmtCursoTurma.setInt(1, cursoId);
                                 stmtCursoTurma.setInt(2, turmaId);
@@ -52,7 +52,7 @@ public class CadastrarTurmaServlet extends jakarta.servlet.http.HttpServlet {
                             response.setContentType("text/html");
                             response.getWriter().println("<script type=\"text/javascript\">");
                             response.getWriter().println("alert('Turma cadastrada com sucesso!');");
-                            response.getWriter().println("window.location.href = 'home.jsp';");
+                            response.getWriter().println("window.location.href = 'jsp/home.jsp';");
                             response.getWriter().println("</script>");
                         }
                     }
