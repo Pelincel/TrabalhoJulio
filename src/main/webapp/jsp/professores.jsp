@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+    <div class="table-container">
         <div class="scrollable-table">
             <table class="table table-bordered ">
                 <thead>
@@ -75,6 +76,7 @@
                 </tbody>
             </table>
         </div>
+    </div>
 
     <script>
         function toggleProfessorDetails(professorId) {

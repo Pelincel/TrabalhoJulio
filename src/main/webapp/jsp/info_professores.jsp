@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <title>Informações do Professor</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/info_professores.css">
+    <link rel="stylesheet" href="../css/prof_info.css">
     <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
@@ -21,17 +21,16 @@
         </div>
     </header>
 
-    <!-- Div centralizada para o conteúdo -->
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-        <!-- Div que contém as informações do professor -->
-        <div class="container p-4 bg-white shadow rounded" style="width: 100%; max-width: 900px;">
+
+        <div class="container p-4 shadow rounded bloco" style="width: 100%; max-width: 900px;">
             <h2>Informações do Professor</h2>
             <%
                 int professorId = Integer.parseInt(request.getParameter("professorId"));
                 String errorMessage = "";
 
                 try (Connection conn = dbconnect.getConnection()) {
-                    // Obter informações básicas do professor
+                    // infos dos profs
                     String queryProfessor = "SELECT * FROM professores WHERE professor_id = ?";
                     try (PreparedStatement stmt = conn.prepareStatement(queryProfessor)) {
                         stmt.setInt(1, professorId);
@@ -51,7 +50,7 @@
                         }
                     }
 
-                    // Obter especializações do professor
+                    // especializações dos profs
                     String queryEspecializacoes = "SELECT e.nome FROM especializacoes e " +
                                                   "JOIN professor_especializacoes pe ON e.especializacao_id = pe.especializacao_id " +
                                                   "WHERE pe.professor_id = ?";
@@ -74,7 +73,7 @@
                         }
                     }
 
-                    // Obter turmas que o professor leciona
+                    // turmas do prof
                     String queryTurmas = "SELECT t.nome, t.ano_semestre FROM turmas t " +
                                          "JOIN turma_disciplinas td ON t.turma_id = td.turma_id " +
                                          "WHERE td.professor_id = ?";
@@ -98,7 +97,7 @@
                         }
                     }
 
-                    // Obter disciplinas que o professor leciona
+                    // disciplinas do prof
                     String queryDisciplinas = "SELECT d.nome FROM disciplinas d " +
                                               "JOIN turma_disciplinas td ON d.disciplina_id = td.disciplina_id " +
                                               "WHERE td.professor_id = ?";

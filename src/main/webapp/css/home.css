@@ -106,17 +106,17 @@ table.table {
     background-color: var(--cor-fundo);
 }
 
-/* Centralizando os botões lado a lado */
 .button-container {
     display: flex;
-    justify-content: center;  /* Centraliza os botões horizontalmente */
-    gap: 10px;                /* Adiciona espaçamento entre os botões */
+    justify-content: center; 
+    gap: 10px;                
     margin-top: 20px;
+    margin-bottom: 1%;
 }
 
 .button-container .btn {
-    /* Botões pequenos */
-    font-size: 0.875rem;  /* Tamanho pequeno da fonte */
-    padding: 5px 15px;    /* Menor padding para botões menores */
-    height: auto;         /* Permite que o botão se ajuste ao conteúdo */
+ 
+    font-size: 0.875rem;
+    padding: 5px 15px;   
+    height: auto;        
 }

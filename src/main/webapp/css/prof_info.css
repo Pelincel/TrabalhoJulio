@@ -28,25 +28,7 @@ body::before {
     z-index: -1;
 }
 
-h1 {
-    color: #343a40;
-}
-
-h4 {
-    margin-top: 20px;
-    color: black;
-}
-
-h5 {
-    color: black;
-}
-
-.table th {
-    background-color: #400106;
-    color: white;
-}
-
-.table tbody tr:hover {
-    background-color: #400106;
-    color: #fff;
+.bloco {
+    margin-top: 3%;
+    background-color: rgba(255, 255, 255, 0.8);
 }

@@ -58,6 +58,7 @@
     <title><%= cursoNome %> - Informações</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/disciplinas.css">
     <style>
         .alunos {
             display: none; /* Esconder inicialmente */
@@ -66,7 +67,7 @@
     </style>
 </head>
 <body>
-     <header class="py-3">
+    <header class="py-3">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <h3>CeepSystem</h3>
@@ -74,35 +75,44 @@
             </div>
         </div>
     </header>
-    <h1>Detalhes do Curso: <%= cursoNome %></h1>
-    
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nome da Turma</th>
-                <th>Ano/Semestre</th>
-                <th>Ação</th>
-            </tr>
-        </thead>
-        <tbody>
-            <%
-            // Exibir turmas
-            for (int i = 0; i < turmasList.size(); i++) {
+  
+    <div class="container mt-4">
+        <h4>Detalhes do Curso: <%= cursoNome %></h4>
+  
+        <div class="info-div mt-4 p-3 border rounded shadow-sm" style="background-color: #ffffff;">
+        <table class="table table-striped">
+            <thead class="">
+                <tr>
+                    <th>Nome da Turma</th>
+                    <th>Ano/Semestre</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                // Exibir turmas
+                for (int i = 0; i < turmasList.size(); i++) {
                 %>
                 <tr>
                     <td><%= turmasList.get(i) %></td>
                     <td><%= anoSemestreList.get(i) %></td> <!-- Exibe o ano/semestre -->
                     <td>
-                        <button class="ver-alunos" data-turma-id="<%= turmaIdsList.get(i) %>">Ver Alunos</button>
+                        <button class="btn btn-danger ver-alunos" data-turma-id="<%= turmaIdsList.get(i) %>">Ver Alunos</button>
                     </td>
                 </tr>
                 <%
-            }
-            %>
-        </tbody>
-    </table>
-    <div id="alunos-container" class="alunos"></div>
-    
+                }
+                %>
+            </tbody>
+        </table>
+             <div id="alunos-container" class="alunos">
+            <!-- Os alunos serão carregados aqui -->
+        </div>
+        </div>
+        <!-- Container para exibir alunos ao clicar -->
+       
+    </div>
+
     <script src="../js/infos_cursos.js"></script>
 </body>
 </html>

@@ -34,7 +34,7 @@ body::before {
     background-image: inherit;
     background-size: cover;
     background-position: center;
-    filter: blur(10px); /* Ajuste o valor para mais ou menos desfoque */
+    filter: blur(10px); 
     z-index: -1;
 }
 
