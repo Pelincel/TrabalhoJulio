@@ -24,7 +24,7 @@
             </div>
         </div>
     </header>
-    <div class="container mt-4">
+    <div class="container mt-4 bloco">
         <%
             int alunoId = Integer.parseInt(request.getParameter("alunoId"));
             String alunoNome = "";

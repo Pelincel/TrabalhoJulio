@@ -65,12 +65,14 @@
         
         <!-- Botões lado a lado -->
         <div class="button-container">
-            <a href="cad/cadaluno.jsp" class="btn btn-primary btn-sm">Cadastrar Aluno</a>
-            <a href="cad/cadprofessor.jsp"class="btn btn-primary btn-sm">Cadastrar Professor</a>
-            <a href="cad/caddisciplinas.jsp" class="btn btn-primary btn-sm">Cadastrar Disciplina</a>
-            <a href="cad/cadcurso.jsp" class="btn btn-primary btn-sm">Cadastrar Curso</a>
-            <a href="cad/cadturma.jsp" class="btn btn-primary btn-sm">Cadastrar Turma</a>
-            <a href="cad/cadespecializacao.jsp" class="btn btn-primary btn-sm">Cadastrar Especialização</a>
+            <a href="cad/cadaluno.jsp" class="btn btn-danger btn-sm">Cadastrar Aluno</a>
+            <a href="cad/cadprofessor.jsp"class="btn btn-danger btn-sm">Cadastrar Professor</a>
+            <a href="cad/caddisciplinas.jsp" class="btn btn-danger btn-sm">Cadastrar Disciplina</a>
+            <a href="cad/cadcurso.jsp" class="btn btn-danger btn-sm">Cadastrar Curso</a>
+            <a href="cad/cadturma.jsp" class="btn btn-danger btn-sm">Cadastrar Turma</a>
+            <a href="cad/cadespecializacao.jsp" class="btn btn-danger btn-sm">Cadastrar Especialização</a>
+            <a href="cad/cadavaliacao.jsp" class="btn btn-danger btn-sm">Cadastrar Avaliação</a>
+            <a href="cad/cadnotas.jsp" class="btn btn-danger btn-sm">Cadastrar Nota</a>
 
         </div>
     </div>
